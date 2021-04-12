@@ -1,23 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+import kanyePicture from './kanyePicture.jpg'
+import { useState, useEffect } from 'react'
 
 function App() {
+
+  const [ quote, setQuote ] = useState('')
+  const [ newQuote, setNewQuote ] = useState(false)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios.get(`https://api.kanye.rest`)
+      console.log(result.data)
+      setQuote(result.data)
+    }
+
+    fetchData()
+  }, [newQuote])
+
+  const getQuote = () => {
+    setNewQuote(!newQuote)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <img src={kanyePicture} style={{ width: '375px' }} alt='kanye west' />
+      <div className='quote'>
+        {quote.quote}
+      </div>
+      <button onClick={getQuote}>
+        New Quote
+      </button>
     </div>
   );
 }
