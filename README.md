@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# See it in Action here:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://trevor2492.github.io/kanye-quotes/
 
 ## Available Scripts
 
