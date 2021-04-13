@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div className="App">
-      <img src={kanyePicture} style={{ width: '375px' }} alt='kanye west' />
+      <img src={kanyePicture} alt='kanye west' />
       <div className='quote'>
         {quote.quote}
       </div>
