@@ -51,4 +51,8 @@ button:hover {
   img {
     width: 300px;
   }
+
+  .quote {
+    font-size: 50px;
+  }
 }
