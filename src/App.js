@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios.get(`https://api.kanye.rest`)
-      console.log(result.data)
+      console.log(result.data) //This is a comment
       setQuote(result.data)
     }
 
